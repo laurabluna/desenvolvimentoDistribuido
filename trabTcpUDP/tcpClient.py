@@ -16,5 +16,5 @@ def enviar_alerta(nome, mensagem, localizacao):
 if __name__ == "__main__":
     nome = input("Seu nome: ")
     mensagem = input("Mensagem de ajuda: ")
-    localizacao = input("Localização")
+    localizacao = input("Localização:")
     enviar_alerta(nome, mensagem, localizacao)

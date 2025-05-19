@@ -17,7 +17,7 @@ def handle_client(conn, addr):
     try:
         data = conn.recv(1024).decode('utf-8')
         if data:
-            nome, mensagem, localizacao = data.split('|', 1)
+            nome, mensagem, localizacao = data.split('|')
             print(f"Pedido recebido de {nome}: {mensagem} : {localizacao}")
 
             alerta = f"🔔 SOS de {nome}: “{mensagem}”: {localizacao}"
