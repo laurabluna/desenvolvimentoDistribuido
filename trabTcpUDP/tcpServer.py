@@ -18,15 +18,25 @@ def handle_client(conn, addr):
         data = conn.recv(1024).decode('utf-8')
         if data:
             nome, mensagem, localizacao = data.split('|')
-            print(f"Pedido recebido de {nome}: {mensagem} : {localizacao}")
+            print(f"🔔 Alerta recebido!")
+            print(f"Nome: {nome}")
+            print(f"Mensagem: {mensagem}")
+            print(f"Localização: {localizacao}")
 
-            alerta = f"🔔 SOS de {nome}: “{mensagem}”: {localizacao}"
+            alerta = f"🔔 SOS de {nome}: “{mensagem}” - {localizacao}"
             udp_broadcast(alerta)
-            conn.sendall(b"Pedido recebido e alerta enviado.")
+
+            resposta = (
+                "Olá, recebemos seu pedido de ajuda com sucesso! "
+                "Fique tranquilo(a), o alerta foi enviado para quem pode ajudar. "
+                "Estamos aqui com você."
+            )
+            conn.sendall(resposta.encode('utf-8'))
     except Exception as e:
         print(f"Erro: {e}")
     finally:
         conn.close()
+
 
 def tcp_server():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
