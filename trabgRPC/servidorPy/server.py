@@ -4,6 +4,10 @@ import time
 import sintomas_pb2
 import sintomas_pb2_grpc
 import joblib
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 
 modelo = joblib.load("modelo.pkl")
 
@@ -19,12 +23,12 @@ sintomas_base = [
 ]
 
 
-def sintomas_para_vetor(lista_sintomas):
+def sintomas(lista_sintomas):
     return [1 if sint in lista_sintomas else 0 for sint in sintomas_base]
 
 class SintomasServiceServicer(sintomas_pb2_grpc.SintomasServiceServicer):
     def Analisar(self, request, context):
-        vetor = sintomas_para_vetor(request.sintomas)
+        vetor = sintomas(request.sintomas)
         diagnostico = modelo.predict([vetor])[0]
 
         if diagnostico == "Possível endometriose":
