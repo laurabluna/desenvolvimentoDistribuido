@@ -12,3 +12,7 @@ link do slide: https://www.canva.com/design/DAGlSlJYZEQ/Hz3zlA5tQ2KCMYEOevfkLA/e
 o estudo de caso que escolhi é enviar alertas para amigas em casos de perigo, contendo o nome, a mensagem e a localização.
 </p>
 
+<p> 3. implementar, por meio de um estudo de caso, a transmissão de dados com gRPC
+  o estudo de caso que escolhi é o monitoramento do ciclo menstrual e acompanhamento de sintomas relacionados a endometriose utilizando inteligência artificial.
+</p>
+
