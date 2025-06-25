@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package sintomas;
+
+service SintomasService {
+  rpc Analisar (SintomasInput) returns (Resposta);
+}
+
+message SintomasInput {
+  repeated string sintomas = 1;
+}
+
+message Resposta {
+  string diagnostico = 1;
+  string recomendacao = 2;
+}
