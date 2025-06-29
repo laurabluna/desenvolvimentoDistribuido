@@ -5,7 +5,7 @@ import warnings
 
 import sintomas_pb2 as sintomas__pb2
 
-GRPC_GENERATED_VERSION = '1.73.0'
+GRPC_GENERATED_VERSION = '1.73.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -35,9 +35,9 @@ class SintomasServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Analisar = channel.unary_unary(
-                '/SintomasService/Analisar',
-                request_serializer=sintomas__pb2.SintomasInput.SerializeToString,
-                response_deserializer=sintomas__pb2.Resposta.FromString,
+                '/sintomas.SintomasService/Analisar',
+                request_serializer=sintomas__pb2.ListaSintomas.SerializeToString,
+                response_deserializer=sintomas__pb2.RespostaDiagnostico.FromString,
                 _registered_method=True)
 
 
@@ -55,14 +55,14 @@ def add_SintomasServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Analisar': grpc.unary_unary_rpc_method_handler(
                     servicer.Analisar,
-                    request_deserializer=sintomas__pb2.SintomasInput.FromString,
-                    response_serializer=sintomas__pb2.Resposta.SerializeToString,
+                    request_deserializer=sintomas__pb2.ListaSintomas.FromString,
+                    response_serializer=sintomas__pb2.RespostaDiagnostico.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'SintomasService', rpc_method_handlers)
+            'sintomas.SintomasService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('SintomasService', rpc_method_handlers)
+    server.add_registered_method_handlers('sintomas.SintomasService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -83,9 +83,9 @@ class SintomasService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/SintomasService/Analisar',
-            sintomas__pb2.SintomasInput.SerializeToString,
-            sintomas__pb2.Resposta.FromString,
+            '/sintomas.SintomasService/Analisar',
+            sintomas__pb2.ListaSintomas.SerializeToString,
+            sintomas__pb2.RespostaDiagnostico.FromString,
             options,
             channel_credentials,
             insecure,

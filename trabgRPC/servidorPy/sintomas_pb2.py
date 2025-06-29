@@ -24,17 +24,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0esintomas.proto\"!\n\rSintomasInput\x12\x10\n\x08sintomas\x18\x01 \x03(\t\"5\n\x08Resposta\x12\x13\n\x0b\x64iagnostico\x18\x01 \x01(\t\x12\x14\n\x0crecomendacao\x18\x02 \x01(\t28\n\x0fSintomasService\x12%\n\x08\x41nalisar\x12\x0e.SintomasInput\x1a\t.Respostab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0esintomas.proto\x12\x08sintomas\"!\n\rListaSintomas\x12\x10\n\x08sintomas\x18\x01 \x03(\t\"@\n\x13RespostaDiagnostico\x12\x13\n\x0b\x64iagnostico\x18\x01 \x01(\t\x12\x14\n\x0crecomendacao\x18\x02 \x01(\t2U\n\x0fSintomasService\x12\x42\n\x08\x41nalisar\x12\x17.sintomas.ListaSintomas\x1a\x1d.sintomas.RespostaDiagnosticob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'sintomas_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_SINTOMASINPUT']._serialized_start=18
-  _globals['_SINTOMASINPUT']._serialized_end=51
-  _globals['_RESPOSTA']._serialized_start=53
-  _globals['_RESPOSTA']._serialized_end=106
-  _globals['_SINTOMASSERVICE']._serialized_start=108
-  _globals['_SINTOMASSERVICE']._serialized_end=164
+  _globals['_LISTASINTOMAS']._serialized_start=28
+  _globals['_LISTASINTOMAS']._serialized_end=61
+  _globals['_RESPOSTADIAGNOSTICO']._serialized_start=63
+  _globals['_RESPOSTADIAGNOSTICO']._serialized_end=127
+  _globals['_SINTOMASSERVICE']._serialized_start=129
+  _globals['_SINTOMASSERVICE']._serialized_end=214
 # @@protoc_insertion_point(module_scope)
