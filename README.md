@@ -16,3 +16,5 @@ o estudo de caso que escolhi é enviar alertas para amigas em casos de perigo, c
   o estudo de caso que escolhi é o monitoramento do ciclo menstrual e acompanhamento de sintomas relacionados a endometriose utilizando inteligência artificial.
 </p>
 
+link do slide: https://www.canva.com/design/DAGqjADz7cc/s7Pfw5IicN_nm3Vw4LkofQ/edit?utm_content=DAGqjADz7cc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
